@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 06 - JavaScript Strings</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>JavaScript Strings</h1>
+        <p>Learning Strings with simple examples</p>
+    </header>
+
+    <main>
+
+        <!-- 1. Creating Strings -->
+        <section class="card">
+            <h2>1. Creating Strings</h2>
+            <button id="createBtn">Show Strings</button>
+            <p id="createOutput"></p>
+        </section>
+
+        <!-- 2. String Length -->
+        <section class="card">
+            <h2>2. String Length</h2>
+            <button id="lengthBtn">Get Length</button>
+            <p id="lengthOutput"></p>
+        </section>
+
+        <!-- 3. Accessing Characters -->
+        <section class="card">
+            <h2>3. Accessing Characters Using Indexes</h2>
+            <button id="indexBtn">Get Characters</button>
+            <p id="indexOutput"></p>
+        </section>
+
+        <!-- 4. Uppercase and Lowercase -->
+        <section class="card">
+            <h2>4. toUpperCase() & toLowerCase()</h2>
+            <button id="caseBtn">Change Case</button>
+            <p id="caseOutput"></p>
+        </section>
+
+        <!-- 5. Trim Methods -->
+        <section class="card">
+            <h2>5. trim(), trimStart(), trimEnd()</h2>
+            <button id="trimBtn">Remove Spaces</button>
+            <p id="trimOutput"></p>
+        </section>
+
+        <!-- 6. Includes, StartsWith, EndsWith -->
+        <section class="card">
+            <h2>6. includes(), startsWith(), endsWith()</h2>
+            <button id="searchBtn">Check String</button>
+            <p id="searchOutput"></p>
+        </section>
+
+        <!-- 7. IndexOf and LastIndexOf -->
+        <section class="card">
+            <h2>7. indexOf() & lastIndexOf()</h2>
+            <button id="findBtn">Find Position</button>
+        
+        </section>
+
+        <!-- 8. Slice and Substring -->
+        <section class="card">
+            <h2>8. slice() & substring()</h2>
+            <button id="extractBtn">Extract Text</button>
+            <p id="extractOutput"></p>
+        </section>
+
+        <!-- 9. Replace and ReplaceAll -->
+        <section class="card">
+            <h2>9. replace() & replaceAll()</h2>
+            <button id="replaceBtn">Replace Text</button>
+            <p id="replaceOutput"></p>
+        </section>
+
+        <!-- 10. Split and Concat -->
+        <section class="card">
+            <h2>10. split() & concat()</h2>
+            <button id="splitBtn">Split and Join</button>
+            <p id="splitOutput"></p>
+        </section>
+
+        <!-- 11. Template Literals -->
+        <section class="card">
+            <h2>11. Template Literals</h2>
+            <button id="templateBtn">Show Introduction</button>
+            <p id="templateOutput"></p>
+        </section>
+
+        <!-- 12. String Immutability -->
+        <section class="card">
+            <h2>12. Strings Are Immutable</h2>
+            <button id="immutableBtn">Check Immutability</button>
+            <p id="immutableOutput"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>JavaScript Practice - Task 06</p>
+    </footer>
+
+</body>
+</html>
+1. Creating Strings
+JavaScript mein string banane ke 3 common tareeqe hain.
+const name1 = 'Mateen';
+const name2 = "Mateen";
+const name3 = `Mateen`;
+
+
+Roman Urdu:
+- ' ' Single quotes
+- " " Double quotes
+- ` ` Backticks
+Teeno strings banane ke liye use hote hain. Backticks ka ek extra faida hai: inke 
+andar hum variables bhi easily use kar sakte hain.
+2. String Length
+const text = "Hello World";
+
+console.log(text.length);
+
+
+Output: 11
+Roman Urdu: .length string ke total characters count karta hai. Is mein letters ke 
+saath spaces bhi count hote hain.
+3. Accessing Characters Using Indexes
+const word = "Mateen";
+
+console.log(word[0]);
+console.log(word[1]);
+console.log(word[2]);
+
+
+Output:
+M
+a
+t
+
+
+Roman Urdu: Har character ka apna index 
+number hota hai. Index hamesha 0
+ se start hota hai, 1 se nahi.
+Character	M	a	t	e	e	n
+Index	0	1	2	3	4	5
+
+4. toUpperCase() and toLowerCase()
+const name = "Mateen";
+
+console.log(name.toUpperCase());
+console.log(name.toLowerCase());
+
+
+Output:
+MATEEN
+mateen
+
+
+Roman Urdu:
+- toUpperCase() tamam letters ko capital karta hai.
+- toLowerCase() tamam letters ko small karta hai.
+5. trim(), trimStart() and trimEnd()
+const text = "   Hello World   ";
+
+console.log(text.trim());
+console.log(text.trimStart());
+console.log(text.trimEnd());
+
+
+Roman Urdu:
+Method	Kaam
+trim()	Start aur end dono ke extra spaces remove
+trimStart()	Sirf start ke spaces remove
+trimEnd()	Sirf end ke spaces remove
+
+Ye methods beech ke spaces remove nahi karte.
+
+Example: "Hello World" mein Hello aur World ke darmiyan space same rahega.
+6. includes(), startsWith() and endsWith()
+const message = "I am learning JavaScript";
+
+console.log(message.includes("JavaScript"));
+console.log(message.startsWith("I am"));
+console.log(message.endsWith("JavaScript"));
+
+
+Output:
+true
+true
+true
+
+
+Roman Urdu:
+- includes() check karta hai ke koi word string mein mojood hai ya nahi.
+- startsWith() check karta hai ke string kis word se shuru hoti hai.
+- endsWith() check karta hai ke string kis word par khatam hoti hai.
+Ye methods true ya false return karte hain.
+7. indexOf() and lastIndexOf()
+const text = "Hello World, Hello";
+
+console.log(text.indexOf("Hello"));
+console.log(text.lastIndexOf("Hello"));
+
+
+Output:
+0
+13
+
+
+Roman Urdu:
+- indexOf() word ki pehli position batata hai.
+- lastIndexOf() word ki aakhri position batata hai.
+Agar searched word na mile to -1 return hota hai.
+8. slice() and substring()
+const name = "JavaScript";
+
+console.log(name.slice(0, 4));
+console.log(name.substring(4, 10));
+
+
+Output:
+Java
+Script
+
+
+Roman Urdu: Ye dono methods string ka specific part nikalne ke liye use hote hain.
+
+In mein:
+- Pehla number starting index hota hai.
+- Doosra number ending index hota hai.
+- Ending index result mein include nahi hota.
+Ek important difference:
+const text = "JavaScript";
+
+console.log(text.slice(-6));
+console.log(text.substring(-6, 10));
+
+
+Output:
+Script
+JavaScript
+
+
+slice() negative index support karta hai, jabke substring() negative value ko 0 
+samajhta hai.
+9. replace() and replaceAll()
+const text = "I like HTML. HTML is easy.";
+
+console.log(text.replace("HTML", "JavaScript"));
+
+console.log(text.replaceAll("HTML", "JavaScript"));
+
+
+Output:
+I like JavaScript. HTML is easy.
+
+I like JavaScript. JavaScript is easy.
+
+
+Roman Urdu:
+- replace() pehli matching value change karta hai.
+- replaceAll() jitni baar matching value aaye, sab ko change karta hai.
+10. split() and concat()
+split():
+const names = "Ali, Ahmed, Mateen";
+
+const result = names.split(", ");
+
+console.log(result);
+
+
+Output:
+["Ali", "Ahmed", "Mateen"]
+
+
+Roman Urdu: split() ek string ko divide karke array bana deta hai.
+ Yahan comma aur space ki jagah se names separate hue hain.
+
+concat():
+const first = "Hello";
+const second = " Mateen";
+
+console.log(first.concat(second));
+
+
+Output:
+Hello Mateen
+
+
+Roman Urdu: concat() do ya zyada strings ko aapas mein join karta hai.
+11. Template Literals and String Interpolation
+const name = "Mateen";
+const age = 20;
+
+const message = `My name is ${name} and my age is ${age}.`;
+
+console.log(message);
+
+
+Output:
+My name is Mateen and my age is 20.
+
+
+Roman Urdu: Backticks ke andar ${} use karke hum variables ki values string mein
+ add kar sakte hain. Is process ko String Interpolation kehte hain.
+
+Iska faida ye hai ke humein baar baar + operator use nahi karna parta.
+12. Strings Are Immutable
+let name = "mateen";
+
+name.toUpperCase();
+
+console.log(name);
+
+
+Output:
+mateen
+
+
+Ab ye dekhein:
+let name = "mateen";
+
+name = name.toUpperCase();
+
+console.log(name);
+
+
+Output:
+MATEEN
+
+
+Roman Urdu: Immutable ka matlab hai ke JavaScript mein original string ko 
+directly modify nahi kar sakte.
+
+toUpperCase() ek new string return karta hai. Agar aap us new value ko 
+original variable mein assign kar dein to variable ki value update ho jati hai.
+
+Step 6: Quick revision table
+Ye table apne notes mein save kar lein.
+Method / Property	Kaam
+.length	Characters count
+[index]	Character access
+toUpperCase()	Capital letters
+toLowerCase()	Small letters
+trim()	Both sides spaces remove
+trimStart()	Start spaces remove
+trimEnd()	End spaces remove
+includes()	Word search
+startsWith()	Starting word check
+endsWith()	Ending word check
+indexOf()	First position
+lastIndexOf()	Last position
+slice()	String ka part nikalna
+substring()	String ka part nikalna
+replace()	First match replace
+replaceAll()	All matches replace
+split()	String to Array
+concat()	Strings join
+Template literals	Variables inside strings
+
+Step 7: Khud practice karein
+Ab main aapko 5 chhoti practice activities deta hoon. Inhein khud JavaScript
+ mein solve karne ki koshish karein.
